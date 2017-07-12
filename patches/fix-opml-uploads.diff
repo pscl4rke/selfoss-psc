@@ -1,0 +1,13 @@
+Index: selfoss-psc/selfoss/controllers/Opml.php
+===================================================================
+--- selfoss-psc.orig/selfoss/controllers/Opml.php
++++ selfoss-psc/selfoss/controllers/Opml.php
+@@ -56,7 +56,7 @@ class Opml extends BaseController {
+             if ($opml['error'] == UPLOAD_ERR_NO_FILE) {
+                 throw new \Exception('No file uploaded!');
+             }
+-            if (!in_array($opml['type'], ['application/xml', 'text/xml', 'text/x-opml+xml', 'text/x-opml'])) {
++            if (!in_array($opml['type'], ['application/xml', 'text/xml', 'text/x-opml+xml', 'text/x-opml', 'application/octet-stream'])) {
+                 throw new \Exception('Unsupported file type: ' . $opml['type']);
+             }
+ 
