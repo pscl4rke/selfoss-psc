@@ -1,0 +1,21 @@
+Index: selfoss-psc/selfoss/public/js/selfoss-shortcuts.js
+===================================================================
+--- selfoss-psc.orig/selfoss/public/js/selfoss-shortcuts.js
++++ selfoss-psc/selfoss/public/js/selfoss-shortcuts.js
+@@ -65,7 +65,15 @@ selfoss.shortcuts = {
+             e.preventDefault();
+             return false;
+         });
+-        
++
++        // 'l': load images
++        $(document).bind('keydown', 'l', function(e) {
++            selfoss.events.entriesToolbar($('.entry.selected'));
++            $('.entry.selected .entry-loadimages').click();
++            e.preventDefault();
++            return false;
++        });
++
+         // 's': star/unstar
+         $(document).bind('keydown', 's', function(e) {
+             selfoss.events.entriesToolbar($('.entry.selected'));
