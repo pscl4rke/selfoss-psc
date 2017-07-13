@@ -1,0 +1,81 @@
+Index: selfoss-psc/selfoss/public/css/style.css
+===================================================================
+--- selfoss-psc.orig/selfoss/public/css/style.css
++++ selfoss-psc/selfoss/public/css/style.css
+@@ -505,15 +505,24 @@ body * {
+         column-rule: 1px solid rgba(204, 204, 204, 0.4);
+         font-size:0.95em;
+         margin-top:20px;
+-        line-height: 1.7em;
++        line-height: 1.6em;
+         overflow: hidden;
+         padding: 0 1em;
+     }
+-    
++
++        .entry-content h1, h2, h3, h4, h5, h6 {
++            color: #3D6D69;
++            margin-bottom: 1em;
++        }
++
+         .entry-content a {
+             color:#3d6d69;
+         }
+-        
++
++        .entry-content code {
++            font-family: courier;
++        }
++
+         .entry-content img {
+             max-width:99%;
+             display: block;
+@@ -521,22 +530,30 @@ body * {
+         }
+         
+         .entry-content p {
+-            margin-bottom:0.6em;
++            margin-bottom: 1em;
+         }
+-        
++
++        .entry-content ol, .entry-content ul {
++            margin-bottom: 1em;
++        }
++
+         .entry-content ol li {
+-            list-style:decimal inside;
++            list-style: decimal;
++            margin-left: 35px;
++            padding-left: 5px;
+         }
+ 
+         .entry-content li {
+-            margin:0.3em;
+-            list-style:disc inside;
++            list-style: square;
++            margin-left: 35px;
++            padding-left: 5px;
+         }
+ 
+         .entry-content blockquote {
+-            padding:1px 10px;
+-            border-left: 2px solid #eaeaea;
+-            font-style: italic;
++            margin-left: 20px;
++            padding-left: 20px;
++            border-left: #3D6D69 3px solid;
++            margin-bottom: 1em;
+         }
+ 
+         .entry-content.entry-content-nocolumns {
+@@ -548,6 +565,9 @@ body * {
+         
+         .entry-content pre {
+             overflow-x: auto;
++            padding-left: 40px;
++            font-family: courier;
++            font-size: 85%;
+         }
+ 
+         .entry-content blockquote {
