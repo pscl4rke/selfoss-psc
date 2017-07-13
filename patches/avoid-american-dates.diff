@@ -1,0 +1,14 @@
+Index: selfoss-psc/selfoss/helpers/ViewHelper.php
+===================================================================
+--- selfoss-psc.orig/selfoss/helpers/ViewHelper.php
++++ selfoss-psc/selfoss/helpers/ViewHelper.php
+@@ -73,7 +73,8 @@ class ViewHelper {
+         }
+ 
+         //return $datestr;
+-        return \F3::get('lang_timestamp', $date->getTimestamp());
++        //return \F3::get('lang_timestamp', $date->getTimestamp());
++        return $date->format("jS M Y H:i");
+     }
+ 
+     /**
