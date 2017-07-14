@@ -4,7 +4,7 @@
 FROM php:5.6-apache
 
 RUN apt-get update                                                  \
- && apt-get install -y unzip libjpeg62-turbo-dev libpng12-dev       \
+ && apt-get install -y unzip sqlite3 libjpeg62-turbo-dev libpng12-dev \
  && a2enmod rewrite headers                                         \
  && docker-php-ext-configure gd --with-jpeg-dir=/usr/include/       \
  && docker-php-ext-install gd mbstring
