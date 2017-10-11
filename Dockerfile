@@ -22,7 +22,8 @@ WORKDIR /var/www/html
 
 COPY patches /tmp/patches
 RUN tac /tmp/patches/series | while read patchfile                  \
-  ;     do cat /tmp/patches/$patchfile | patch -p2 --verbose        \
+  ;     do echo; echo $patchfile; echo                              \
+  ;     cat /tmp/patches/$patchfile | patch -p2 --verbose           \
   ; done
 
 VOLUME /var/www/html/data
