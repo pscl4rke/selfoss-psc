@@ -1,0 +1,12 @@
+Index: selfoss-psc/selfoss/controllers/Opml.php
+===================================================================
+--- selfoss-psc.orig/selfoss/controllers/Opml.php
++++ selfoss-psc/selfoss/controllers/Opml.php
+@@ -309,6 +309,7 @@ class Opml extends BaseController {
+         }
+ 
+         // generate outline elements for all sources
++        ksort($sources['tagged']);
+         foreach ($sources['tagged'] as $tag => $children) {
+             \F3::get('logger')->debug("OPML export: exporting tag $tag sources");
+             $this->writer->startElement('outline');
