@@ -1,3 +1,4 @@
+disable-left-and-right.diff
 sort-opml-categories.diff
 dont-refresh-with-keybinding.diff
 more-findable-title.diff
