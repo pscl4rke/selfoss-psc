@@ -1,0 +1,14 @@
+Index: selfoss-psc/selfoss/public/css/style.css
+===================================================================
+--- selfoss-psc.orig/selfoss/public/css/style.css
++++ selfoss-psc/selfoss/public/css/style.css
+@@ -595,7 +595,8 @@ body * {
+         }
+ 
+         .entry-content sup {
+-            vertical-align: sup;
++            vertical-align: super;
++            font-size: x-small;
+         }
+         .entry-content sub {
+             vertical-align: sub;
