@@ -2,7 +2,7 @@ Index: selfoss-psc/selfoss/public/js/selfoss-shortcuts.js
 ===================================================================
 --- selfoss-psc.orig/selfoss/public/js/selfoss-shortcuts.js
 +++ selfoss-psc/selfoss/public/js/selfoss-shortcuts.js
-@@ -65,7 +65,15 @@ selfoss.shortcuts = {
+@@ -54,7 +54,15 @@ selfoss.shortcuts = {
              e.preventDefault();
              return false;
          });

@@ -2,7 +2,7 @@ Index: selfoss-psc/selfoss/public/js/selfoss-shortcuts.js
 ===================================================================
 --- selfoss-psc.orig/selfoss/public/js/selfoss-shortcuts.js
 +++ selfoss-psc/selfoss/public/js/selfoss-shortcuts.js
-@@ -123,12 +123,6 @@ selfoss.shortcuts = {
+@@ -120,12 +120,6 @@ selfoss.shortcuts = {
              $('#nav-filter-unread').click();
          });
  
