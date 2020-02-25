@@ -29,7 +29,7 @@ Index: selfoss-psc/selfoss/public/css/style.css
 -        
 +
 +        .entry-content code {
-+            font-family: courier;
++            font-family: courier, monospace;
 +        }
 +
          .entry-content img {
@@ -79,7 +79,7 @@ Index: selfoss-psc/selfoss/public/css/style.css
          .entry-content pre {
              overflow-x: auto;
 +            padding-left: 40px;
-+            font-family: courier;
++            font-family: courier, monospace;
 +            font-size: 85%;
          }
  
