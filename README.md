@@ -14,7 +14,7 @@ This repository collects up my patches,
 and also provides the support files
 for running it through Docker.
 
-If you pass `-d selfoss` to `unzip`
+If you run `make selfoss`
 the package is unzipped to the expected
 (and gitignored) directory.
 
