@@ -1,0 +1,103 @@
+Index: selfoss-psc/selfoss/controllers/Sources.php
+===================================================================
+--- selfoss-psc.orig/selfoss/controllers/Sources.php
++++ selfoss-psc/selfoss/controllers/Sources.php
+@@ -26,6 +26,7 @@ class Sources extends BaseController {
+         // load sources
+         $sourcesDao = new \daos\Sources();
+         echo '<button class="source-add">' . \F3::get('lang_source_add') . '</button>' .
++             '<a href="#sourcesbydate">SOURCES BY DATE</a>' .
+              '<a class="source-export" href="opmlexport">' . \F3::get('lang_source_export') . '</a>' .
+              '<a class="source-opml" href="opml">' . \F3::get('lang_source_opml');
+         $sourcesHtml = '</a>';
+@@ -35,6 +36,36 @@ class Sources extends BaseController {
+             $this->view->source = $source;
+             $sourcesHtml .= $this->view->render('templates/source.phtml');
+         }
++
++        echo $sourcesHtml;
++    }
++
++    public function showbydate() {
++        $this->needsLoggedIn();
++
++        // get available spouts
++        $spoutLoader = new \helpers\SpoutLoader();
++        $this->view->spouts = $spoutLoader->all();
++
++        // load sources
++        $sourcesDao = new \daos\Sources();
++        echo '<button class="source-add">' . \F3::get('lang_source_add') . '</button>' .
++             '<a class="source-export" href="opmlexport">' . \F3::get('lang_source_export') . '</a>' .
++             '<a class="source-opml" href="opml">' . \F3::get('lang_source_opml');
++        $sourcesHtml = '</a>';
++        $i = 0;
++
++        $theSources = $sourcesDao->getWithIcon();
++        //usort($theSources, sortByLastPost);
++        usort($theSources, function ($a, $b) {
++            $av = $a['lastentry'];
++            $bv = $b['lastentry'];
++            return ($av > $bv) ? +1 : -1;
++        });
++        foreach ($theSources as $source) {
++            $this->view->source = $source;
++            $sourcesHtml .= $this->view->render('templates/source.phtml');
++        }
+ 
+         echo $sourcesHtml;
+     }
+Index: selfoss-psc/selfoss/index.php
+===================================================================
+--- selfoss-psc.orig/selfoss/index.php
++++ selfoss-psc/selfoss/index.php
+@@ -83,6 +83,7 @@ $f3->route('POST /unstarr/@item', 'contr
+ 
+ $f3->route('GET /source/params', 'controllers\Sources->params'); // html
+ $f3->route('GET /sources', 'controllers\Sources->show'); // html
++$f3->route('GET /sourcesbydate', 'controllers\Sources->showbydate'); // html
+ $f3->route('GET /source', 'controllers\Sources->add'); // html
+ $f3->route('GET /sources/list', 'controllers\Sources->listSources'); // json
+ $f3->route('GET /sources/sourcesStats', 'controllers\Sources->sourcesStats'); // json
+Index: selfoss-psc/selfoss/public/js/selfoss-events.js
+===================================================================
+--- selfoss-psc.orig/selfoss/public/js/selfoss-events.js
++++ selfoss-psc/selfoss/public/js/selfoss-events.js
+@@ -172,6 +172,37 @@ selfoss.events = {
+                     $('#content').removeClass('loading');
+                 }
+             });
++        } else if(hash=="sourcesbydate") { // load sourcesbydate
++            if( selfoss.events.subsection ) {
++                selfoss.ui.showError('Invalid subsection: '
++                                     + selfoss.events.subsection);
++                done();
++                return;
++            }
++
++            if (selfoss.activeAjaxReq !== null)
++                selfoss.activeAjaxReq.abort();
++
++            selfoss.ui.refreshStreamButtons();
++            $('#content').addClass('loading').html("");
++            selfoss.activeAjaxReq = $.ajax({
++                url: $('base').attr('href')+'sourcesbydate',
++                type: 'GET',
++                success: function(data) {
++                    $('#content').html(data);
++                    selfoss.events.sources();
++                },
++                error: function(jqXHR, textStatus, errorThrown) {
++                    if (textStatus == "abort")
++                        return;
++                    else if (errorThrown)
++                        selfoss.ui.showError('Load list error: '+
++                                             textStatus+' '+errorThrown);
++                },
++                complete: function(jqXHR, textStatus) {
++                    $('#content').removeClass('loading');
++                }
++            });
+         } else {
+             selfoss.ui.showError('Invalid section: ' + selfoss.events.section);
+         }
