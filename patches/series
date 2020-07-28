@@ -10,3 +10,4 @@ sort-opml-categories.diff
 disable-left-and-right.diff
 fix-superscript.diff
 add-sorting-by-date.diff
+default-to-unread-items.diff

@@ -1,0 +1,13 @@
+Index: selfoss-psc/selfoss/defaults.ini
+===================================================================
+--- selfoss-psc.orig/selfoss/defaults.ini
++++ selfoss-psc/selfoss/defaults.ini
+@@ -21,7 +21,7 @@ html_title=Selfoss Feed Reader
+ rss_title=Selfoss Feed Reader feed
+ rss_max_items=300
+ rss_mark_as_read=0
+-homepage=newest
++homepage=unread
+ language=0
+ auto_mark_as_read=0
+ auto_collapse=0
