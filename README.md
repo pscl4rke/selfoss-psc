@@ -1,5 +1,4 @@
 
-
 [Selfoss](https://selfoss.aditu.de/)
 is a very good RSS feed reader,
 which I've been using since
@@ -22,18 +21,18 @@ Patch management is easiest when using
 [quilt](http://savannah.nongnu.org/projects/quilt).
 In short:
 
-    # To show current information
-    $ quilt series          # show known patches
-    $ quilt applied         # show current status
-    $ quilt top             # the 'active' patch
-
-    # To fix something up
+    # To fix something up...
+    $ make selfoss          # unpack the upstream
     $ quilt push -a         # apply all patches
     $ quilt new abc.diff    # start a new patch
     $ quilt edit file.abc   # edit, with tracking
     $ quilt refresh         # pick up on changes
-    $ git commit ...        # commit the patch
+    $ git commit patches/   # commit the patch
     $ make image            # rebuild in docker
     $ quilt pop -a          # all back to normal
 
+    # To show current information...
+    $ quilt series          # show known patches
+    $ quilt applied         # show current status
+    $ quilt top             # the 'active' patch
 
