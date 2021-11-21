@@ -18,7 +18,7 @@ the package is unzipped to the expected
 (and gitignored) directory.
 
 Patch management is easiest when using
-[quilt](http://savannah.nongnu.org/projects/quilt).
+[quilt](https://savannah.nongnu.org/projects/quilt).
 In short:
 
     # To fix something up...
@@ -35,4 +35,9 @@ In short:
     $ quilt series          # show known patches
     $ quilt applied         # show current status
     $ quilt top             # the 'active' patch
+
+    # To update all patches for a new source version...
+    $ quilt push [-f]
+    $ quilt refresh
+    $ ...and repeat
 
