@@ -9,6 +9,6 @@ DUMMY:
 image:
 	docker build -t selfoss-psc:$(buildtag) .
 
-selfoss: selfoss-2.17.zip
+selfoss: selfoss-2.18.zip
 	mkdir $@
 	unzip -q $< -d $@

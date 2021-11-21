@@ -11,7 +11,7 @@ RUN apt-get update                                                  \
 COPY php.ini /usr/local/etc/php/
 
 
-COPY selfoss-2.17.zip /tmp/selfoss-latest.zip
+COPY selfoss-2.18.zip /tmp/selfoss-latest.zip
 RUN unzip /tmp/selfoss-latest.zip -d /var/www/html                  \
  && rm /tmp/selfoss-latest.zip                                      \
  && ln -s /var/www/html/data/config.ini /var/www/html               \

@@ -2,7 +2,7 @@ Index: selfoss-psc/selfoss/controllers/Opml.php
 ===================================================================
 --- selfoss-psc.orig/selfoss/controllers/Opml.php
 +++ selfoss-psc/selfoss/controllers/Opml.php
-@@ -309,6 +309,7 @@ class Opml extends BaseController {
+@@ -317,6 +317,7 @@ class Opml extends BaseController {
          }
  
          // generate outline elements for all sources

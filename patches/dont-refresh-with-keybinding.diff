@@ -2,16 +2,20 @@ Index: selfoss-psc/selfoss/public/js/selfoss-shortcuts.js
 ===================================================================
 --- selfoss-psc.orig/selfoss/public/js/selfoss-shortcuts.js
 +++ selfoss-psc/selfoss/public/js/selfoss-shortcuts.js
-@@ -120,12 +120,6 @@ selfoss.shortcuts = {
+@@ -179,16 +179,6 @@ selfoss.shortcuts = {
              $('#nav-filter-unread').click();
          });
  
 -        // 'Shift + r': Refresh sources
 -        $(document).bind('keydown', 'Shift+r', function(e) {
+-            if (!selfoss.shortcuts.active()) {
+-                return false;
+-            }
+-
 -            e.preventDefault();
 -            $('#nav-refresh').click();
 -        });
--        
+-
          // 'Ctrl+m': mark all as read
          $(document).bind('keydown', 'ctrl+m', function(e) {
-             $('#nav-mark').click();
+             if (!selfoss.shortcuts.active()) {

@@ -2,7 +2,7 @@ Index: selfoss-psc/selfoss/defaults.ini
 ===================================================================
 --- selfoss-psc.orig/selfoss/defaults.ini
 +++ selfoss-psc/selfoss/defaults.ini
-@@ -17,8 +17,8 @@ username=
+@@ -18,8 +18,8 @@ username=
  password=
  salt=lkjl1289
  public=

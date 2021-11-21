@@ -2,7 +2,7 @@ Index: selfoss-psc/selfoss/public/css/style.css
 ===================================================================
 --- selfoss-psc.orig/selfoss/public/css/style.css
 +++ selfoss-psc/selfoss/public/css/style.css
-@@ -595,7 +595,8 @@ body * {
+@@ -601,7 +601,8 @@ body * {
          }
  
          .entry-content sup {

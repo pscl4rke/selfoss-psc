@@ -2,7 +2,7 @@ Index: selfoss-psc/selfoss/public/js/selfoss-events-entries.js
 ===================================================================
 --- selfoss-psc.orig/selfoss/public/js/selfoss-events-entries.js
 +++ selfoss-psc/selfoss/public/js/selfoss-events-entries.js
-@@ -6,7 +6,8 @@ selfoss.events.entries = function(e) {
+@@ -6,7 +6,8 @@ selfoss.events.entries = function() {
      $('.entry, .entry-title').unbind('click');
  
      // show/hide entry
@@ -11,4 +11,4 @@ Index: selfoss-psc/selfoss/public/js/selfoss-events-entries.js
 +    var target = '.entry-title';
      $(target).click(function() {
          var parent = ((target == '.entry') ? $(this) : $(this).parent());
-         
+ 

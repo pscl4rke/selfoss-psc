@@ -2,7 +2,7 @@ Index: selfoss-psc/selfoss/public/css/style.css
 ===================================================================
 --- selfoss-psc.orig/selfoss/public/css/style.css
 +++ selfoss-psc/selfoss/public/css/style.css
-@@ -505,15 +505,29 @@ body * {
+@@ -509,40 +509,62 @@ body * {
          column-rule: 1px solid rgba(204, 204, 204, 0.4);
          font-size:0.95em;
          margin-top:20px;
@@ -10,6 +10,7 @@ Index: selfoss-psc/selfoss/public/css/style.css
 +        line-height: 1.6em;
          overflow: hidden;
          padding: 0 1em;
+         overflow-wrap: break-word;
      }
 -    
 +
@@ -33,11 +34,13 @@ Index: selfoss-psc/selfoss/public/css/style.css
 +        }
 +
          .entry-content img {
-             max-width:99%;
+             max-width: 100%;
+             height: auto;
              display: block;
-@@ -521,22 +535,30 @@ body * {
+             margin-bottom: 5px;
          }
-         
+-        
++
          .entry-content p {
 -            margin-bottom:0.6em;
 +            margin-bottom: 1em;
@@ -74,13 +77,13 @@ Index: selfoss-psc/selfoss/public/css/style.css
          }
  
          .entry-content.entry-content-nocolumns {
-@@ -548,6 +570,9 @@ body * {
-         
-         .entry-content pre {
+@@ -554,6 +576,9 @@ body * {
+ 
+         .entry-content pre, .entry-content table {
              overflow-x: auto;
 +            padding-left: 40px;
 +            font-family: courier, monospace;
 +            font-size: 85%;
          }
  
-         .entry-content blockquote {
+         .entry-content table {

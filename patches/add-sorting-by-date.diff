@@ -51,7 +51,7 @@ Index: selfoss-psc/selfoss/index.php
 ===================================================================
 --- selfoss-psc.orig/selfoss/index.php
 +++ selfoss-psc/selfoss/index.php
-@@ -83,6 +83,7 @@ $f3->route('POST /unstarr/@item', 'contr
+@@ -60,6 +60,7 @@ $f3->route('POST /unstarr/@item', 'contr
  
  $f3->route('GET /source/params', 'controllers\Sources->params'); // html
  $f3->route('GET /sources', 'controllers\Sources->show'); // html
@@ -63,12 +63,12 @@ Index: selfoss-psc/selfoss/public/js/selfoss-events.js
 ===================================================================
 --- selfoss-psc.orig/selfoss/public/js/selfoss-events.js
 +++ selfoss-psc/selfoss/public/js/selfoss-events.js
-@@ -172,6 +172,37 @@ selfoss.events = {
-                     $('#content').removeClass('loading');
-                 }
+@@ -225,6 +225,37 @@ selfoss.events = {
              });
-+        } else if(hash=="sourcesbydate") { // load sourcesbydate
-+            if( selfoss.events.subsection ) {
+         } else if (hash == 'login') {
+             selfoss.ui.showLogin();
++        } else if (hash == "sourcesbydate") { // load sourcesbydate
++            if (selfoss.events.subsection) {
 +                selfoss.ui.showError('Invalid subsection: '
 +                                     + selfoss.events.subsection);
 +                done();
