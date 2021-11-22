@@ -1,7 +1,7 @@
 
 # Heavily based upon https://github.com/JensErat/docker-selfoss
 
-FROM php:5.6-apache
+FROM php:5.6-apache-stretch
 
 RUN apt-get update                                                  \
  && apt-get install -y unzip sqlite3 libjpeg62-turbo-dev libpng-dev \
