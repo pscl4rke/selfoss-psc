@@ -1,9 +1,14 @@
 
 # Heavily based upon https://github.com/JensErat/docker-selfoss
+# Note ssl is updated from Debian LTS so that feeds behind
+# let's encrypt certs can still be read.
+
 
 FROM php:5.6-apache-stretch
 
+
 RUN apt-get update                                                  \
+ && apt-get install -y ca-certificates libssl1.0.2                  \
  && apt-get install -y unzip sqlite3 libjpeg62-turbo-dev libpng-dev \
  && a2enmod rewrite headers                                         \
  && docker-php-ext-configure gd --with-jpeg-dir=/usr/include/       \
