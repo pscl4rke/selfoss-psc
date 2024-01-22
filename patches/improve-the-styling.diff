@@ -44,12 +44,12 @@ Index: selfoss-psc/selfoss/public/css/style.css
          .entry-content p {
 -            margin-bottom:0.6em;
 +            margin-bottom: 1em;
-         }
--        
++        }
 +
 +        .entry-content ol, .entry-content ul {
 +            margin-bottom: 1em;
-+        }
+         }
+-        
 +
          .entry-content ol li {
 -            list-style:decimal inside;
@@ -77,9 +77,12 @@ Index: selfoss-psc/selfoss/public/css/style.css
          }
  
          .entry-content.entry-content-nocolumns {
-@@ -554,6 +576,9 @@ body * {
+@@ -552,14 +574,24 @@ body * {
+             max-width: 750px;
+         }
  
-         .entry-content pre, .entry-content table {
+-        .entry-content pre, .entry-content table {
++        .entry-content pre {
              overflow-x: auto;
 +            padding-left: 40px;
 +            font-family: courier, monospace;
@@ -87,3 +90,16 @@ Index: selfoss-psc/selfoss/public/css/style.css
          }
  
          .entry-content table {
++            overflow-x: auto;
++            padding-left: 40px;
+             display: block;
+         }
+ 
++        .entry-content td, .entry-content th {
++            padding: 3px;
++            border: solid 1px #3D6D69;
++        }
++
+         .entry-content p,
+         .entry-content ol,
+         .entry-content ul,
