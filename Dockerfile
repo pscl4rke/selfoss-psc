@@ -4,15 +4,14 @@
 # let's encrypt certs can still be read.
 
 
-FROM php:5.6-apache-stretch
+FROM php:7.4-apache-buster
 
 
 RUN apt-get update                                                  \
- && apt-get install -y ca-certificates libssl1.0.2                  \
+ && apt-get install -y ca-certificates libssl1.1                    \
  && apt-get install -y unzip sqlite3 libjpeg62-turbo-dev libpng-dev \
  && a2enmod rewrite headers                                         \
- && docker-php-ext-configure gd --with-jpeg-dir=/usr/include/       \
- && docker-php-ext-install gd mbstring
+ && docker-php-ext-install gd
 COPY php.ini /usr/local/etc/php/
 
 
