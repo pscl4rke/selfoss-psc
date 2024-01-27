@@ -1,10 +1,10 @@
 
-# Heavily based upon https://github.com/JensErat/docker-selfoss
-# Note ssl is updated from Debian LTS so that feeds behind
+# Originally based upon https://github.com/JensErat/docker-selfoss
+# Note ssl was updated from Debian LTS so that feeds behind
 # let's encrypt certs can still be read.
 
 
-FROM php:7.4-apache-buster
+FROM php:7.4-apache-bullseye
 
 
 RUN apt-get update                                                  \
