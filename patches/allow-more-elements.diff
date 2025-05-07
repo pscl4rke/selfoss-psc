@@ -2,7 +2,12 @@ Index: selfoss-psc/selfoss/helpers/ContentLoader.php
 ===================================================================
 --- selfoss-psc.orig/selfoss/helpers/ContentLoader.php
 +++ selfoss-psc/selfoss/helpers/ContentLoader.php
-@@ -263,7 +263,7 @@ class ContentLoader {
+@@ -259,11 +259,11 @@ class ContentLoader {
+             $content,
+             [
+                 'safe' => 1,
+-                'deny_attribute' => '* -alt -title -src -href -target',
++                'deny_attribute' => '* -alt -title -src -href -target -colspan -rowspan',
                  'keep_bad' => 0,
                  'comment' => 1,
                  'cdata' => 1,
