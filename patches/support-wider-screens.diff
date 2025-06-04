@@ -1,0 +1,47 @@
+Index: selfoss-psc/selfoss/public/css/style.css
+===================================================================
+--- selfoss-psc.orig/selfoss/public/css/style.css
++++ selfoss-psc/selfoss/public/css/style.css
+@@ -498,15 +498,6 @@ body * {
+     
+     .entry-content {
+         display:none;
+-        -moz-column-count: 3;
+-        -moz-column-gap: 2em;
+-        -moz-column-rule: 1px solid rgba(204, 204, 204, 0.4);
+-        -webkit-column-count: 3;
+-        -webkit-column-gap: 2em;
+-        -webkit-column-rule: 1px solid rgba(204, 204, 204, 0.4);
+-        column-count: 3;
+-        column-gap: 2em;
+-        column-rule: 1px solid rgba(204, 204, 204, 0.4);
+         font-size:0.95em;
+         margin-top:20px;
+         line-height: 1.6em;
+@@ -1021,7 +1012,7 @@ body.authenabled.loggedin #nav-logout {
+ /* mobile version */
+ 
+ /* only desktop */
+-@media screen and (min-width: 1024px) {
++@media screen and (min-width: 9999px) {
+ 
+     body.publicmode.notloggedin  .entry-toolbar {
+         display:none;
+@@ -1048,7 +1039,7 @@ body.authenabled.loggedin #nav-logout {
+ }
+ 
+ /* ipad and smartphone */
+-@media screen and (max-width:1024px) {
++@media screen and (max-width:9999px) {
+ 
+     .entry,
+     .source {
+@@ -1449,7 +1440,7 @@ body.authenabled.loggedin #nav-logout {
+ 
+ 
+ /* tablet */
+-@media screen and (min-width: 641px) and (max-width:1024px) {
++@media screen and (min-width: 641px) and (max-width:9999px) {
+    
+     #nav {
+         width:160px;
