@@ -21,3 +21,19 @@ Index: selfoss-psc/selfoss/public/js/selfoss-shortcuts.js
          // 's': star/unstar
          $(document).bind('keydown', 's', function(e) {
              if (!selfoss.shortcuts.active()) {
+Index: selfoss-psc/selfoss/public/js/selfoss-events-entries.js
+===================================================================
+--- selfoss-psc.orig/selfoss/public/js/selfoss-events-entries.js
++++ selfoss-psc/selfoss/public/js/selfoss-events-entries.js
+@@ -112,11 +112,6 @@ selfoss.events.entries = function() {
+                     parent.get(0).scrollIntoView();
+                 }
+             }
+-
+-            // load images not on mobile devices
+-            if (selfoss.isMobile() == false || $('#config').data('load_images_on_mobile') == '1') {
+-                entryContent.lazyLoadImages();
+-            }
+         }
+     });
+ 
