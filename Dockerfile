@@ -4,7 +4,7 @@
 # let's encrypt certs can still be read.
 
 
-FROM php:7.4-apache-bullseye
+FROM docker.io/library/php:7.4-apache-bullseye
 
 
 RUN apt-get update                                                  \
